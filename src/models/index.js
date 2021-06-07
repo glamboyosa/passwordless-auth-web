@@ -14,8 +14,6 @@ export default class TruID {
 
     console.log('tru.ID: Creating PhoneCheck for', body)
 
-   
-
     try {
       const response = await axios.post(`${this.baseURL}/phone-check`, body)
 
@@ -37,6 +35,8 @@ export default class TruID {
       data: null,
       error: null,
     }
+
+    console.log('tru.ID: Creating PhoneCheck for', body)
 
     try {
       const response = await axios(

@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@tru_id/tru-sdk-web": "^0.0.2-canary.1",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "toastify-js": "^1.11.0"
   }
 }
