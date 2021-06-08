@@ -27,7 +27,7 @@
     "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
-    "@tru_id/tru-sdk-web": "^0.0.2-canary.1",
+    "@tru_id/tru-sdk-web": "^0.0.3",
     "axios": "^0.21.1",
     "toastify-js": "^1.11.0"
   }

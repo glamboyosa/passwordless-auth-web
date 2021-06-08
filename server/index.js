@@ -23,8 +23,10 @@ app.post('/api/phone-check', async (req, res) => {
       phoneNumber,
       accessToken,
     )
+
     if (!numberSupported) {
       res.status(400).send({ message: 'number not supported' })
+   
       return
     }
     res

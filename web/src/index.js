@@ -17,22 +17,22 @@ form.addEventListener('submit', async (e) => {
 
   // Todo: replace with actual localtunnel URL
 
-  const truID = new TruID('https://green-moose-13.loca.lt')
+  const truID = new TruID('http://localhost:4000')
 
   // render loader and create PhoneCheck
   toggleLoading(true)
   try {
     await truID.createPhoneCheck(phoneNumber.value)
 
-    if (truID.state.data.check_url && truID.state.data.check_id) {
+    if (truID.state.data?.checkUrl && truID.state.data?.checkId) {
+      console.log('get here?')
       // store `check_id` and `check_url` in a variable to be used later
-      const checkId = truID.state.data.check_id
+      const checkId = truID.state.data.checkId
 
-      const checkUrl = truID.state.data.check_url
+      const checkUrl = truID.state.data.checkUrl
       console.log(checkId)
 
       console.log(truID.state.data)
-      // const checkUrl = truID.state.data.check_url
 
       toggleLoading(false)
 
@@ -52,14 +52,11 @@ form.addEventListener('submit', async (e) => {
         // we do not have a match
         return Toastify({
           text: 'Cannot verify phone number. Please contact your network provider 🤷‍♂️',
-          duration: 3000,
+          duration: 12000,
           close: true,
-          style: {
-            background: '#f00',
-          },
           gravity: 'top', // `top` or `bottom`
           position: 'center', // `left`, `center` or `right`
-          // backgroundColor: '#f00',
+          backgroundColor: '#f00',
           stopOnFocus: true, // Prevents dismissing of toast on hover
           onClick: function () {}, // Callback after click
         }).showToast()
@@ -67,14 +64,24 @@ form.addEventListener('submit', async (e) => {
       // we have a match
       Toastify({
         text: 'Successfully Signed Up',
-        duration: 3000,
+        duration: 12000,
         close: true,
-        style: {
-          background: '#00ff00',
-        },
         gravity: 'top', // `top` or `bottom`
         position: 'center', // `left`, `center` or `right`
-        // backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+        backgroundColor: "background: '#00ff00'",
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function () {}, // Callback after click
+      }).showToast()
+    } else {
+      // we have an error
+      toggleLoading(false)
+      Toastify({
+        text: `${truID.state.error}`,
+        duration: 12000,
+        close: true,
+        gravity: 'top', // `top` or `bottom`
+        position: 'center', // `left`, `center` or `right`
+        backgroundColor: '#f00',
         stopOnFocus: true, // Prevents dismissing of toast on hover
         onClick: function () {}, // Callback after click
       }).showToast()
@@ -82,7 +89,7 @@ form.addEventListener('submit', async (e) => {
   } catch (e) {
     toggleLoading(false)
     console.log(e.message)
-
+    console.log(JSON.stringify(e))
     if (e.code === truIDSDK.DeviceCoverageErrors.NotMobileIP) {
       // tell the user they should turn off the wifi
       // and use the mobile connection before proceeding
@@ -90,12 +97,9 @@ form.addEventListener('submit', async (e) => {
         text: 'Please switch to mobile data and try again',
         duration: 3000,
         close: true,
-        style: {
-          background: '#00b09b',
-        },
         gravity: 'top', // `top` or `bottom`
         position: 'center', // `left`, `center` or `right`
-        // backgroundColor: '#00b09b',
+        backgroundColor: '#00b09b',
         stopOnFocus: true, // Prevents dismissing of toast on hover
         onClick: function () {}, // Callback after click
       }).showToast()
@@ -103,7 +107,7 @@ form.addEventListener('submit', async (e) => {
     // render something bc it's something else
     Toastify({
       text: `${e.message}`,
-      duration: 3000,
+      duration: 12000,
       close: true,
       gravity: 'top', // `top` or `bottom`
       position: 'center', // `left`, `center` or `right`

@@ -15,16 +15,17 @@ export default class TruID {
     console.log('tru.ID: Creating PhoneCheck for', body)
 
     try {
-      const response = await axios.post(`${this.baseURL}/phone-check`, body)
+      const response = await axios.post(`${this.baseURL}/api/phone-check`, body)
 
       this.state = {
         ...this.state,
-        data: response.data,
+        data: response.data.data,
       }
     } catch (e) {
+      console.log(e.response)
       this.state = {
         ...this.state,
-        error: e.message,
+        error: e.response.data.message,
       }
     }
   }
@@ -36,21 +37,21 @@ export default class TruID {
       error: null,
     }
 
-    console.log('tru.ID: Creating PhoneCheck for', body)
+    console.log('tru.ID: Getting PhoneCheck response')
 
     try {
       const response = await axios(
-        `${this.baseURL}/phone-check?check_id=${checkId}`,
+        `${this.baseURL}/api//phone-check?check_id=${checkId}`,
       )
 
       this.state = {
         ...this.state,
-        data: response.data,
+        data: response.data.data,
       }
     } catch (e) {
       this.state = {
         ...this.state,
-        error: e.message,
+        error: e.response.data.message,
       }
     }
   }

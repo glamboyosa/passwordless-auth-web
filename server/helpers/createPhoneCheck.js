@@ -21,12 +21,16 @@ exports.createPhoneCheck = async (phoneNumber, accessToken) => {
     const data = await response.json()
     console.log(data)
 
-    checkUrl = data.check_url
+    checkUrl = data._links.check_url.href
     checkId = data.check_id
   } else if (response.status === 400) {
+    console.log('number not supported')
     numberSupported = false
   } else {
-    throw new Error(`Unexpected API response ${res.status}`, res.toString())
+    throw new Error(
+      `Unexpected API response ${response.status}`,
+      response.toString(),
+    )
   }
   return { checkId, checkUrl, numberSupported }
 }
