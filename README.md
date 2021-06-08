@@ -4,6 +4,7 @@
 
 - A mobile phone with a SIM card and mobile data connection
 - [Node.js](https://nodejs.org)
+- [ngrok](https://ngrok.com/)
 
 ## Getting Started
 
@@ -63,7 +64,19 @@ then run
 npm dev
 ```
 
-to start the frontend application first open up a new terminal and install dependencies via:
+then run ngrok. In the terminal where ngrok is running, run the following:
+
+```bash
+ngrok http 4000
+```
+
+this will give you a `https` website e.g.
+
+```bash
+https://0d834043fe8d.ngrok.io -> http://localhost:4000
+```
+
+To start the frontend application first open up a new terminal and install dependencies via:
 
 ```bash
  cd web && npm install
