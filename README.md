@@ -61,7 +61,7 @@ npm install
 then run
 
 ```bash
-npm dev
+npm start
 ```
 
 then run ngrok. In the terminal where ngrok is running, run the following:
