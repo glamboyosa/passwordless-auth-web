@@ -88,6 +88,20 @@ then run:
 npm start
 ```
 
+It will open up on `http://localhost:1234`. open a new ngrok terminal and run the following:
+
+```
+ngrok http 1234
+```
+
+This will give you a `https` website e.g.
+
+```bash
+https://yourngrokurl.io -> http://localhost:1234
+```
+
+Open the ngrok URL on your mobile device
+
 ## References
 
 - [**tru.ID** docs](https://developer.tru.id/docs)
