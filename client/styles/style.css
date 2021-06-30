@@ -35,6 +35,7 @@ main {
   justify-content: center;
   flex-direction: column;
   max-width: 600px;
+  width: 100%;
 }
 
 .heading {
@@ -47,6 +48,7 @@ main {
 .form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .message {
