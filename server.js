@@ -1,10 +1,11 @@
 const express = require('express')
-const cors = require('cors')
+const Bundler = require('parcel-bundler')
 
 const app = express()
+const bundler = new Bundler('./client/index.html', {})
 
 app.use(express.json())
-app.use(cors())
+app.use(bundler.middleware())
 
 // create PhoneCheck
 app.post('/api/phone-check', async (req, res) => {
