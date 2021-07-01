@@ -8,11 +8,13 @@ app.use(express.json())
 
 // create PhoneCheck
 app.post('/api/phone-check', async (req, res) => {
+  console.log('POST /api/phone-check', req.body)
   res.json({})
 })
 
 // get PhoneCheck response
-app.get('/api/phone-check', async (req, res) => {
+app.get('/api/phone-check/:checkId', async (req, res) => {
+  console.log('GET /api/phone-check/:checkId', req.params)
   res.json({})
 })
 
