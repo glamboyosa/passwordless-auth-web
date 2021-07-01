@@ -4,6 +4,8 @@ import Toastify from 'toastify-js'
 
 import 'toastify-js/src/toastify.css'
 
-form.addEventListener('submit', async (e) => {
+import { formElement } from './helpers/variables'
+
+formElement.addEventListener('submit', async (e) => {
   e.preventDefault()
 })

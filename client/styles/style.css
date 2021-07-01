@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700&display=swap');
+
 :root {
   --black: #000;
   --white: #fff;
   --green: #00ff7f;
+  --grey: #e7e7e7;
+  --dark-grey: #888888;
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
@@ -19,30 +25,51 @@ body {
   justify-content: center;
   align-items: center;
 }
-.form {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+main {
+  margin: 1rem;
   border: 1px solid var(--black);
   padding: 1rem 3rem;
-  width: 50%;
-  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
 }
+
 .heading {
+  text-align: center;
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.input {
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.message {
+  font-size: 2rem;
+  margin: 2rem 0;
+  display: none;
+}
+
+.message .link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.phone-number {
   padding: 1rem 3rem;
   font-family: inherit;
   border-radius: 3px;
   box-shadow: 0 1.2px 1.2px 1.2px var(--black);
   outline: none;
-  display: none;
 }
+
 .submit-button {
   padding: 1rem 3rem;
   cursor: pointer;
@@ -56,14 +83,22 @@ body {
   font-family: inherit;
   width: auto;
 }
+
+.input:disabled {
+  background-color: var(--grey);
+  color: var(--dark-grey);
+  cursor: not-allowed;
+}
+
 @media only screen and (max-width: 600px) {
   .form {
-    width: 80%;
     height: auto;
   }
+
   .heading {
     font-size: 2.5rem;
   }
+
   .submit-button {
     font-size: 1.5rem;
     white-space: nowrap;
