@@ -37,22 +37,9 @@ Create a new project via:
 tru projects:create passwordless-auth-web --project-dir .
 ```
 
-Next you need to setup the server.
-
-Copy the values of `.env.example` into a `.env` file via:
-
-```bash
-cd server && cp .env.example .env
-```
-
-configure the following values in your `.env`:
-
-`TRU_ID_CLIENT`: The client ID found in the `tru.json` file in the root directory.
-`TRU_ID_SECRET`: The client secret found in the `tru.json` file in the root directory.
-
 ## Starting Project
 
-To start the server first install dependencies via:
+To start the project first install dependencies via:
 
 ```bash
 npm install
@@ -64,7 +51,9 @@ then run
 npm start
 ```
 
-then run ngrok. In the terminal where ngrok is running, run the following:
+This will run the project on PORT 4000.
+
+Then run ngrok. In the terminal where ngrok is running, run the following:
 
 ```bash
 ngrok http 4000
@@ -76,30 +65,7 @@ this will give you a `https` website e.g.
 https://0d834043fe8d.ngrok.io -> http://localhost:4000
 ```
 
-To start the frontend application first open up a new terminal and install dependencies via:
-
-```bash
- cd web && npm install
-```
-
-then run:
-
-```bash
-npm start
-```
-
-It will open up on `http://localhost:1234`. open a new ngrok terminal and run the following:
-
-```
-ngrok http 1234
-```
-
-This will give you a `https` website e.g.
-
-```bash
-https://yourngrokurl.io -> http://localhost:1234
-```
-
+S
 Open the ngrok URL on your mobile device
 
 ## References
