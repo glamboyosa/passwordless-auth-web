@@ -1,10 +1,20 @@
 // This file contains references to DOM elements
 const submitHandler = document.querySelector('.submit-button')
 
-const form = document.querySelector('.form')
+const formElement = document.querySelector('.form')
 
 const loader = document.querySelector('.loader')
 
-const phoneNumber = document.querySelector('.input')
+const phoneNumberElement = document.querySelector('.phone-number')
 
-export { submitHandler, loader, form, phoneNumber }
+const messageElement = document.querySelector('.message')
+
+const inputElements = document.getElementsByClassName('input')
+
+export {
+  messageElement,
+  loader,
+  formElement,
+  phoneNumberElement,
+  inputElements,
+}
