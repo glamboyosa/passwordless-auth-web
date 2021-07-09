@@ -5,12 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js -w server/index.js"
+    "start": "nodemon server/index.js -w server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tru_id/tru-sdk-web": "^0.0.5",
     "btoa": "^1.2.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
