@@ -12,6 +12,7 @@ const messageElement = document.querySelector('.message')
 const inputElements = document.getElementsByClassName('input')
 
 export {
+  submitHandler,
   messageElement,
   loader,
   formElement,
