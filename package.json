@@ -18,9 +18,9 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "parcel-bundler": "^1.12.5",
-    "toastify-js": "^1.11.0"
+    "toastify-js": "^1.11.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.12"
   }
 }
