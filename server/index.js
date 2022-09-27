@@ -12,9 +12,9 @@ app.post('/api/phone-check', async (req, res) => {
   res.json({})
 })
 
-// get PhoneCheck response
-app.get('/api/phone-check/:checkId', async (req, res) => {
-  console.log('GET /api/phone-check/:checkId', req.params)
+// post PhoneCheck response
+app.post('/api/phone-check/:checkId', async (req, res) => {
+  console.log('POST /api/phone-check/:checkId', req.params)
   res.json({
     data: {},
     message: 'Not implemented',
